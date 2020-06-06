@@ -2,10 +2,11 @@ import random
 import numpy as np
 def game_core_v2(number):
     
-    '''задаём счетчик и загадываем рандомное число и ряда 1 - 100'''
+    '''задаём счетчик и загадываем рандомное число и ряда 1 - 100
+        и задаём переменные для границ, тк будем их изменять дальше
+    '''
     count = 1      
     predict = np.random.randint(1,101)  
-    '''задаём переменные для границ, тк будем их изменять дальше'''
     border1 = 1      
     border2 = 101
     
@@ -17,7 +18,6 @@ def game_core_v2(number):
         count+=1
         if number > predict:
             border1 = predict # фиксируется нижняя граница
-            
         elif number < predict: 
             border2 = predict # фиксируется верхняя граница
         predict = int(np.random.randint(border1,border2)) #генерируем число для следующей попытки нового цикла
